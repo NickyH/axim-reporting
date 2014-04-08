@@ -1,0 +1,55 @@
+<div class="top-bar">
+  <div class="utility-tab">
+
+    <!-- main top right icons -->
+    <img class="icon-downer" src="../Images/Custom/downer-logo-with-text-white.png">
+
+        <div class="btn-group nger hidden">
+
+          <div type="button" class="btn btn-default">
+            <div class="dropdown">
+              <div class="dropdown-toggle" data-toggle="dropdown">
+                <a class="nav-link" href="#">
+                  <img class="menu-icon" src="../Images/Custom/icons/icon-profile.png"> Username <b class="caret"></b></div>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Profile</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Logout</a></li>
+                </ul>
+              </a>
+            </div>
+          </div>
+          <div type="button" class="btn btn-default">
+            <a id="manage-users" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-users.png"> Users </a>
+          </div>
+          <div type="button" class="btn btn-default">
+            <a id="manage-facilities" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-facilities.png"> Facilities </a>
+          </div>
+          <div type="button" class="btn btn-default">
+            <div class="dropdown">
+              <div class="dropdown-toggle" data-toggle="dropdown">
+                <a class="nav-link" href="#">
+                  <img class="menu-icon" src="../Images/Custom/icons/icon-reports.png"> Reports <b class="caret"></b></div>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Global</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Facilities</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Factors</a></li>
+                </ul>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+  </div>
+
+</div>
+
+<script>
+$('.btn-group.nger .btn').on('mouseover', nav_button_hover);
+$('.btn-group.nger .btn').on('mouseleave', nav_button_leave);
+$('#manage-facilities').on('click', insert_manage_facilities);
+$('#manage-users').on('click', insert_manage_users);
+</script>
