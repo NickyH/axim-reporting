@@ -6,40 +6,6 @@ $(function(){
   insert_top();
 });
 
-
-$(window).scroll(function(){
-  var table_width = $('.activity-data-table').width();
-  var table_left_position = $('.activity-data-table').position() + 203;
-  var column_width_1 = $('.activity-data-table tr:first-child td').attr('colspan');
-  if  ($(window).scrollTop() >= 330){
-      var tbl_edit_width = $('th.tbl-edit').width();
-      var tbl_activity_width = $('th.tbl-activity').width();
-      var tbl_invoice_width = $('th.tbl-invoice').width();
-      var tbl_estimate_width = $('th.tbl-estimate').width();
-      var tbl_measure_width = $('th.tbl-measure').width();
-      var tbl_unit_width = $('th.tbl-unit').width();
-      var tbl_total_width = $('th.tbl-total').width();
-      var tbl_comments_width = $('th.tbl-comments').width();
-
-      $('.cloned-header').remove();
-      var cloned_header = $('.activity-data-table thead').clone().addClass('cloned-header');
-
-      $('thead.cloned-header').children('tr').children('th.tbl-edit').width(tbl_edit_width);
-      $('thead.cloned-header').children('tr').children('th.tbl-activity').width(tbl_activity_width);
-      $('thead.cloned-header').children('tr').children('th.tbl-invoice').width(tbl_invoice_width);
-      $('thead.cloned-header').children('tr').children('th.tbl-estimate').width(tbl_estimate_width);
-      $('thead.cloned-header').children('tr').children('th.tbl-measure').width(tbl_measure_width);
-      $('thead.cloned-header').children('tr').children('th.tbl-unit').width(tbl_unit_width);
-      $('thead.cloned-header').children('tr').children('th.tbl-total').width(tbl_total_width);
-      $('thead.cloned-header').children('tr').children('th.tbl-comments').width(tbl_comments_width);
-
-      $(cloned_header).insertAfter('table.activity-data-table').css({ width:table_width }).delay(1000).removeClass('hidden');
-  }
-  if  ($(window).scrollTop() <= 329){
-       $('.cloned-header').remove();
-    }
-});
-
 function clear_saved_state() {
   console.log('clear');
 
@@ -48,6 +14,16 @@ function clear_saved_state() {
 function insert_login() {
   $('#insert-form').empty();
   $.get('../login.html', function(data) {
+    $('#insert-form').html(data);
+  });
+}
+
+function insert_form() {
+  var filename = $(this).text();
+  filename = filename.replace(/(\w+).*/,"$1");
+  console.log(filename);
+  $('#insert-form').empty();
+  $.get('../forms/form_' + filename + '.html', function(data) {
     $('#insert-form').html(data);
   });
 }
