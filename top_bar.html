@@ -11,7 +11,7 @@
               <div class="dropdown-toggle" data-toggle="dropdown">
                 <a class="nav-link" href="#">
                   <img class="menu-icon" src="../Images/Custom/icons/icon-profile.png"> Username <b class="caret"></b></div>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu user">
                   <li><a href="#">Logout</a></li>
                   <li class="divider"></li>
                   <li><a href="#">Profile</a></li>
@@ -21,9 +21,15 @@
               </a>
             </div>
           </div>
+
           <div type="button" class="btn btn-default">
             <a id="manage-facilities" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-downloads.png"> Downloads </a>
           </div>
+
+          <div type="button" class="btn btn-default">
+            <a id="manage-facilities" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-dashboard.png"> Dashboard </a>
+          </div>
+
           <div type="button" class="btn btn-default">
             <div class="dropdown">
               <div class="dropdown-toggle" data-toggle="dropdown">
@@ -58,5 +64,6 @@ $('.btn-group.nger .btn').on('mouseleave', nav_button_leave);
 $('#manage-facilities').on('click', insert_manage_facilities);
 $('#manage-users').on('click', insert_manage_users);
 
-$('ul.reports li a').on('click', insert_form);
+$('ul.reports li a').on('click', insert_report);
+$('ul.user li a').on('click', insert_profile);
 </script>

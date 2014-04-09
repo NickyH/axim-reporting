@@ -18,14 +18,33 @@ function insert_login() {
   });
 }
 
-function insert_form() {
+function insert_report() {
   var filename = $(this).text();
   filename = filename.replace(/(\w+).*/,"$1");
-  console.log(filename);
   $('#insert-form').empty();
   $.get('../forms/form_' + filename + '.html', function(data) {
     $('#insert-form').html(data);
   });
+}
+
+function insert_profile() {
+  var filename = $(this).text();
+  filename = filename.replace(/(\w+).*/,"$1");
+  if (filename === 'Profile') {
+    $('#insert-form').empty();
+    $.get('../forms/form_profile.html', function(data) {
+      $('#insert-form').html(data);
+    });
+  }
+  if (filename === 'Change') {
+    $('#insert-form').empty();
+    $.get('../forms/form_password.html', function(data) {
+      $('#insert-form').html(data);
+    });
+  }
+  if (filename === 'Logout') {
+    window.location = '/';
+  }
 }
 
 function login() {
