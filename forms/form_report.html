@@ -1,56 +1,7 @@
 <div class="content_div">
 
-  <div class="form-buttons">
-    <div class="form-title">
-      <img class="form-head-icon" src="../Images/Custom/icons/icon-reports.png"><span>Report</span>
-    </div>
-    <input type="submit" value="Cancel" class="form-button cancel-button" data-role="button" />
-    <input type="submit" value="Save" class="form-button save-button" data-role="button" />
-  </div>
-
   <!-- forms content container -->
   <div class="container-fluid form-container">
-
-    <!-- form row 0 -->
-    <div class="row">
-      <div class="col-12">
-        <div class="row-fluid">
-
-          <!-- form panel 1 -->
-          <div class="col-lg-12 col-md-12 col-sm-12">
-
-            <div class="form-panel full-width title-panel">
-
-              <form class="form-horizontal container" role="form">
-
-                <div class="form-column col-lg-6 col-md-6 col-sm-12">
-
-                  <div class="form-title-group">
-                    <img class="form-head-icon" src="../Images/Custom/icons/icon-facilities.png"><span>Downer Asia</span>
-                    <span class="facility-id">83</span>
-                  </div>
-
-                </div>
-                <!-- end form-column-->
-
-                <div class="form-column col-lg-6 col-md-6 col-sm-12">
-                  <label class="col-sm-12 facility-address">11 Lorong 3 Toa Payoh, #03-16</label>
-                  <label class="col-sm-12 facility-address">Singapore/Singapore</label>
-                  <label class="col-sm-12 facility-address"></label>
-                  <label class="col-sm-12 facility-geo">Lat: 1.2939, Long: 103.82</label>
-                </div>
-                <!-- end form-column-->
-
-              </form>
-
-            </div>
-          </div>
-          <!-- end form panel 1 -->
-
-        </div>
-      </div>
-    </div>
-    <!-- end form row 0-->
 
     <!-- tab row -->
     <div class="row">
@@ -64,23 +15,8 @@
 
               <form class="form-horizontal container" role="form">
 
-                <ul class="nav nav-tabs nav-justified">
-                  <li class="active"><a href="#">Weekly</a></li>
-                  <li><a href="#">Fortnightly</a></li>
-                  <li><a href="#">Monthly</a></li>
-                  <li><a href="#">Quarterly</a></li>
-                  <li><a href="#">Yearly</a></li>
-                  <li><a href="#">Custom</a></li>
-                </ul>
-
-                <ul class="nav nav-tabs nav-justified">
-                  <li class="active"><a href="#">Energy Data</a></li>
-                  <li><a href="#">Water & Waste</a></li>
-                  <li><a href="#">EVR</a></li>
-                </ul>
-
                 <div class="table-header">
-                  <span>Electricity</span>
+                  <span>M100 Inspection Reports</span>
                   <div class="input-group add-on activity-table-search">
                     <input type="search">
                     <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
@@ -92,150 +28,44 @@
                   <thead>
                     <tr>
                       <th class="tbl-edit"></th>
-                      <th class="tbl-activity">Activity Type</th>
-                      <th class="tbl-invoice">Consumption Invoice/Fuel Card/Delivery Records</th>
-                      <th class="tbl-estimate">Consumption Estimated</th>
-                      <th class="tbl-measure">Consumption Direct Measure</th>
-                      <th class="tbl-unit">Unit of Measure</th>
-                      <th class="tbl-total">Total Consumption</th>
-                      <th class="tbl-comments">Reference/Comments</th>
+                      <th class="tbl-activity">Report Number</th>
+                      <th class="tbl-invoice">Name</th>
+                      <th class="tbl-estimate">Category</th>
+                      <th class="tbl-measure">Type</th>
+                      <th class="tbl-unit">Description</th>
                     </tr>
                   </thead>
                   <tr>
                     <td><div class="text glyphicon glyphicon-edit"></div></td>
-                    <td><div class="text">77 Electricity (ACT/NSW)</div></td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </td>
-                    <td><div class="text">kL</div></td>
-                    <td><div class="text"></div></td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <textarea type="text" rows="1" class="form-control"></textarea>
-                        </div>
-                      </div>
-                    </td>
+                    <td><div class="text">STD-M102</div></td>
+                    <td><div class="text">Inspection Checklist</div></td>
+                    <td><div class="text">Asset</div></td>
+                    <td><div class="text">Detail</div></td>
+                    <td><div class="text">Filter: Date Range (Inspection), Asset Group, Display Option</div></td>
                   </tr>
                   <tr>
                     <td><div class="text glyphicon glyphicon-edit"></div></td>
-                    <td><div class="text">77 Electricity (VIC)</div></td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                    </td>
-                    <td><div class="text">kL</div></td>
-                    <td><div class="text"></div></td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <textarea type="text" rows="1" class="form-control" disabled></textarea>
-                        </div>
-                      </div>
-                    </td>
+                    <td><div class="text">STD-M102</div></td>
+                    <td><div class="text">Inspection Checklist</div></td>
+                    <td><div class="text">Asset</div></td>
+                    <td><div class="text">Detail</div></td>
+                    <td><div class="text">Filter: Date Range (Inspection), Asset Group, Display Option</div></td>
                   </tr>
                   <tr>
                     <td><div class="text glyphicon glyphicon-edit"></div></td>
-                    <td><div class="text">77 Electricity (QLD)</div></td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                    </td>
-                    <td><div class="text">kL</div></td>
-                    <td><div class="text"></div></td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <textarea type="text" rows="1" class="form-control" disabled></textarea>
-                        </div>
-                      </div>
-                    </td>
+                    <td><div class="text">STD-M102</div></td>
+                    <td><div class="text">Inspection Checklist</div></td>
+                    <td><div class="text">Asset</div></td>
+                    <td><div class="text">Detail</div></td>
+                    <td><div class="text">Filter: Date Range (Inspection), Asset Group, Display Option</div></td>
                   </tr>
                   <tr>
                     <td><div class="text glyphicon glyphicon-edit"></div></td>
-                    <td><div class="text">77 Electricity (SA)</div></td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                    </td>
-                    <td><div class="text">kL</div></td>
-                    <td><div class="text"></div></td>
-                    <td>
-                      <div class="form-group">
-                        <div class="col-sm-10">
-                          <textarea type="text" rows="1" class="form-control" disabled></textarea>
-                        </div>
-                      </div>
-                    </td>
+                    <td><div class="text">STD-M102</div></td>
+                    <td><div class="text">Inspection Checklist</div></td>
+                    <td><div class="text">Asset</div></td>
+                    <td><div class="text">Detail</div></td>
+                    <td><div class="text">Filter: Date Range (Inspection), Asset Group, Display Option</div></td>
                   </tr>
                 </table>
 
