@@ -4,65 +4,64 @@
     <!-- main top right icons -->
     <img class="icon-downer" src="../Images/Custom/axim.png">
 
-        <div class="btn-group nger hidden">
+      <div class="btn-group nger hidden">
 
-          <div type="button" class="btn btn-default">
-            <div class="dropdown">
-              <div class="dropdown-toggle" data-toggle="dropdown">
-                <a class="nav-link" href="#">
-                  <img class="menu-icon" src="../Images/Custom/icons/icon-profile.png"> Username <b class="caret"></b></div>
-                <ul class="dropdown-menu user">
-                  <li><a href="#">Logout</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Profile</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Change Password</a></li>
-                </ul>
-              </a>
-            </div>
+       <!--  <div type="button" class="btn btn-default">
+          <div class="dropdown">
+            <div class="dropdown-toggle" data-toggle="dropdown">
+              <a class="nav-link" href="#">
+                <img class="menu-icon" src="../Images/Custom/icons/icon-profile.png"> Username <b class="caret"></b></div>
+              <ul class="dropdown-menu user">
+                <li><a href="#">Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Change Password</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </a>
           </div>
+        </div> -->
 
-          <div type="button" class="btn btn-default">
-            <a id="manage-facilities" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-downloads.png"> Downloads </a>
-          </div>
-
-          <div type="button" class="btn btn-default">
-            <a id="manage-facilities" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-dashboard.png"> Dashboard </a>
-          </div>
-
-          <div type="button" class="btn btn-default">
-            <div class="dropdown">
-              <div class="dropdown-toggle" data-toggle="dropdown">
-                <a class="nav-link" href="#">
-                  <img class="menu-icon" src="../Images/Custom/icons/icon-reports.png"> Reports <b class="caret"></b></div>
-                <ul class="dropdown-menu reports">
-                  <li><a href="#">M100 Inspection</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">M200 Defect</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">M300 Task</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">M400 Work Order</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">M900 Others</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">M910 Monthly</a></li>
-                </ul>
-              </a>
-            </div>
-          </div>
-
+        <div type="button" class="btn btn-default">
+          <a id="goto-downloads" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-downloads.png"> Downloads </a>
         </div>
 
-  </div>
+        <div type="button" class="btn btn-default">
+          <a id="goto-dashboard" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-dashboard.png"> Dashboard </a>
+        </div>
 
+        <div type="button" class="btn btn-default">
+          <div class="dropdown">
+            <div class="dropdown-toggle" data-toggle="dropdown">
+              <a class="nav-link" href="#">
+                <img class="menu-icon" src="../Images/Custom/icons/icon-reports.png"> Reports <b class="caret"></b></div>
+              <ul class="dropdown-menu reports">
+                <li><a href="#">M100 Inspection</a></li>
+                <li class="divider"></li>
+                <li><a href="#">M200 Defect</a></li>
+                <li class="divider"></li>
+                <li><a href="#">M300 Task</a></li>
+                <li class="divider"></li>
+                <li><a href="#">M400 Work Order</a></li>
+                <li class="divider"></li>
+                <li><a href="#">M900 Others</a></li>
+                <li class="divider"></li>
+                <li><a href="#">M910 Monthly</a></li>
+              </ul>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
 </div>
 
 <script>
 $('.btn-group.nger .btn').on('mouseover', nav_button_hover);
 $('.btn-group.nger .btn').on('mouseleave', nav_button_leave);
-$('#manage-facilities').on('click', insert_manage_facilities);
-$('#manage-users').on('click', insert_manage_users);
+$('#goto-downloads').on('click', insert_downloads);
+$('#goto-dashboard').on('click', insert_dashboard);
 
 $('ul.reports li a').on('click', insert_report);
 $('ul.user li a').on('click', insert_profile);

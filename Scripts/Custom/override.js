@@ -48,9 +48,22 @@ function insert_profile() {
 }
 
 function login() {
-  $('#insert-form').empty();
-  insert_left();
+  insert_dashboard();
   $('.btn-group.nger').removeClass('hidden');
+}
+
+function insert_dashboard() {
+  $('#insert-form').empty();
+  $.get('dashboard.html', function(data) {
+      $('#insert-form').html(data);
+    });
+}
+
+function insert_downloads() {
+  $('#insert-form').empty();
+  $.get('downloads.html', function(data) {
+      $('#insert-form').html(data);
+    });
 }
 
 function toggle_time_group() {
@@ -199,15 +212,6 @@ function nav_button_leave() {
         }
     };
 })(jQuery);
-
-
-
-function insert_left() {
-  $('#insert-left').empty();
-  $.get('left_bar.html', function(data) {
-    $('#insert-left').html(data);
-  });
-}
 
 function insert_top() {
   $.get('top_bar.html', function(data) {
