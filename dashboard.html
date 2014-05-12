@@ -19,6 +19,20 @@
                   <span>Dashboard</span>
                 </div>
 
+                <div class="col-12">
+                  <div class="row">
+
+                  <div class="col-md-5">
+                    <div id="hazardsFound" class="chart small"></div>
+                  </div>
+                  <div class="col-md-2"></div>
+                  <div class="col-md-5">
+                    <div id="tasksComplete" class="chart small"></div>
+                  </div>
+
+                </div>
+              </div>
+
               </form>
 
             </div>
@@ -34,3 +48,52 @@
 </div>
 
 <script src="../Scripts/Custom/forms.js"></script>
+
+
+<script type="text/javascript">
+
+// hazards found chart
+  var chartHazards = new CanvasJS.Chart("hazardsFound", {
+      data: [
+        {
+          type: "pie",
+          dataPoints: [
+            { x: 10, y: 10 },
+            { x: 20, y: 15 },
+            { x: 30, y: 25 },
+            { x: 40, y: 30 },
+            { x: 50, y: 28 }
+          ]
+        }
+      ],
+      title:{
+            text: "Hazards Found"
+          },
+    backgroundColor: "#eae8e8"
+
+  });
+  chartHazards.render();
+
+// tasks completed chart
+  var chartTasksComplete = new CanvasJS.Chart("tasksComplete", {
+      data: [
+        {
+          type: "pie",
+          dataPoints: [
+            { x: 10, y: 10 },
+            { x: 20, y: 15 },
+            { x: 30, y: 25 },
+            { x: 40, y: 30 },
+            { x: 50, y: 28 }
+          ]
+        }
+      ],
+      title:{
+            text: "Tasks Completed"
+          },
+    backgroundColor: "#eae8e8"
+
+  });
+  chartTasksComplete.render();
+
+</script>

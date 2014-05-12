@@ -18,8 +18,8 @@ body {
     padding-right: 10%;
     padding-top: 100px;
     background-color: @background-main;
-    }
   }
+}
 
 .login-icon {
   position: absolute;
@@ -580,8 +580,7 @@ li.active {
     }
   }
 
-.form-panel
-{
+.form-panel {
   background-color: @form-panel-colour;
   border: @form-panel-border;
   border-radius: @form-panel-border-radius;
@@ -716,7 +715,7 @@ li.active {
 }
 
 .form-column {
-    .form-button {
+  .form-button {
     float: right;
     height: 40px;
     min-width: 160px;
@@ -807,7 +806,7 @@ li.active {
     background-color: @top-bar-colour;
     margin-right: 10px;
     border-radius: 5px;
-    }
+  }
 }
 
 .facility-address {
@@ -926,7 +925,6 @@ li.active {
     border-bottom: 1px solid @top-bar-colour !important;
   }
 }
-
 
 .table-header {
   position: relative;
@@ -1182,8 +1180,8 @@ li.active {
 }
 
 .input-group.list {
-    padding-left: 5px;
-  }
+  padding-left: 5px;
+}
 
 .make-active {
   background-color: @black-medium;
@@ -1202,8 +1200,6 @@ li.active {
     background-color: @layer-active;
   }
 }
-
-
 
 //bootstrap general overrides
 .input-group-addon {
@@ -1632,7 +1628,6 @@ span.lookup:hover {
   }
 }
 
-
 .cb_slide_panel a.close {
   background: url("../images/icons/icon-history-small-white.png") @grey-darker no-repeat !important;
   background-position: center !important;
@@ -1684,4 +1679,17 @@ li.active {
   width: 100%;
   height: 200px;
   border: 1px solid grey;
+}
+
+//canvasjs styling overrides
+.chart {
+  display: inline-block;
+  &.small {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+a.canvasjs-chart-credit {
+  display: none;
 }
