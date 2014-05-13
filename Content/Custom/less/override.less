@@ -1681,12 +1681,29 @@ li.active {
   border: 1px solid grey;
 }
 
+.dashboard {
+  &.col-12 {
+    background-color: white;
+  }
+  &.form-header {
+    margin-bottom: 0;
+  }
+}
 //canvasjs styling overrides
 .chart {
   display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 30px;
   &.small {
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
+    margin-left: 30px;
+  }
+  &.large {
+    height: 450px;
+    width: 900px;
+    margin-left: 70px;
+    margin-bottom: 50px;
   }
 }
 
