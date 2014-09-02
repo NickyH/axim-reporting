@@ -1,0 +1,244 @@
+<div class="content_div">
+
+  <!-- forms content container -->
+  <div class="container-fluid form-container">
+
+    <!-- tab row -->
+    <div class="row">
+      <div class="col-12">
+        <div class="row-fluid">
+
+          <!-- form panel 1 -->
+          <div class="col-lg-12 col-md-12 col-sm-12">
+
+            <div class="form-panel approval-panel">
+
+              <div class="form-horizontal container underline">
+
+                <div class="table-header">
+                  <span>Request Approval Report</span>
+                </div>
+
+                <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Category</label>
+                    <div class="col-sm-8">
+                      <select class="selectpicker form-control show-tick" title='All'>
+                        <option data-hidden="true"></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Task Code</label>
+                    <div class="col-sm-8">
+                      <select class="selectpicker form-control show-tick" title='All'>
+                        <option data-hidden="true"></option>
+                        <option>3456</option>
+                        <option>4567</option>
+                        <option>5678</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Task ID</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+
+                </div>
+                <!-- end form-column-->
+
+                <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Road Name</label>
+                    <div class="col-sm-8">
+                      <select class="selectpicker form-control show-tick" title='All'>
+                        <option data-hidden="true"></option>
+                        <option>Road 1</option>
+                        <option>Road 2</option>
+                        <option>Road 3</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Inspector</label>
+                    <div class="col-sm-8">
+                      <select class="selectpicker form-control show-tick" title='All'>
+                        <option data-hidden="true"></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Review Status</label>
+                    <div class="col-sm-8">
+                      <select class="selectpicker form-control show-tick" title=''>
+                        <option data-hidden="true"></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- end form-column-->
+
+                <div class="form-column col-lg-12 col-md-12 col-sm-12">
+                  <button type="button" class="btn btn-info right margin-left">Run Report</button>
+                  <button type="button" class="btn btn-default right margin-left">Select All</button>
+                  <button type="button" class="btn btn-default right margin-left">Clear All</button>
+                  <button type="button" class="btn btn-default right margin-left">Review</button>
+                </div>
+
+                <div class="approval-summary form-column col-lg-12 col-md-12 col-sm-12">
+                  <div>Total Records<span> 125</span></div>
+                  <div>Approved Defects<span> 0</span></div>
+                  <div>Total Qty<span> 0</span></div>
+                  <div>Total Cost<span> $0.00</span></div>
+                </div>
+
+                </div>
+
+                <div class="form-horizontal container"> <!-- form-->
+
+                  <table id="request-approval-table" class="table table-condensed   reference-history table-striped row-children">
+                    <thead>
+                      <tr>
+                        <th class="col-checkbox"><input type="checkbox"></th>
+                        <th>Task ID</th>
+                        <th>Category</th>
+                        <th>Category Descr</th>
+                        <th>Task Code</th>
+                        <th class="col-codedesc">Code Descr</th>
+                        <th>Class Code</th>
+                        <th>Road</th>
+                        <th class="col-note">Note</th>
+                        <th>Priority</th>
+                        <th>Due Date</th>
+                        <th>Qty</th>
+                        <th>Rate</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>8.249</td>
+                        <td>RM100</td>
+                        <td>Sealed Pavement</td>
+                        <td>P131</td>
+                        <td>DIGOUTS/PATCHES Failed areas > 100sqm</td>
+                        <td>PF</td>
+                        <td>Murray River Road</td>
+                        <td>Reseal area 14'15 Major Patch. Ch 88.27 130X6.6 = 850 Ch 88 44 55 x 2.0 = 110 Ch 86 52 42x 6.6 = 277.2 Ch 88.56 22 x 2.0 = 44 Ch 88.56 42 x 3.0 = 129 Ch 88.66 x 6.6 = 362.8</td>
+                        <td>6M</td>
+                        <td data-order="20121014">14/10/2012</td>
+                        <td>180</td>
+                        <td>90.00</td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>10.246</td>
+                        <td>RM700</td>
+                        <td>Structures</td>
+                        <td>P711</td>
+                        <td>BRIDGE MAINTENANCE - Other Defects</td>
+                        <td>PF</td>
+                        <td>Murray Valley Highway</td>
+                        <td></td>
+                        <td>3M</td>
+                        <td data-order="20121014">14/10/2012</td>
+                        <td>1.8</td>
+                        <td>1000.00</td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>14.249</td>
+                        <td>RM100</td>
+                        <td>Sealed Pavement</td>
+                        <td>P131</td>
+                        <td>DIGOUTS/PATCHES Failed areas > 100sqm</td>
+                        <td>PF</td>
+                        <td>Murray Valley Highway</td>
+                        <td>Reseal Area Major Patch on Shoulder Ch 38.070 90 x 2 = 180m2 High Priority</td>
+                        <td>3M</td>
+                        <td data-order="20121014">14/10/2012</td>
+                        <td>200</td>
+                        <td>100.00</td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>15.246</td>
+                        <td>RM100</td>
+                        <td>Sealed Pavement</td>
+                        <td>P112</td>
+                        <td>DIGOUTS/PATCHES Failed areas > 100sqm</td>
+                        <td>PF</td>
+                        <td>Murray Valley Highway</td>
+                        <td></td>
+                        <td>3M</td>
+                        <td data-order="20121014">14/10/2012</td>
+                        <td>300</td>
+                        <td>10.00</td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>16.249</td>
+                        <td>RM100</td>
+                        <td>Sealed Pavement</td>
+                        <td>P131</td>
+                        <td>DIGOUTS/PATCHES Failed areas > 100sqm</td>
+                        <td>PF</td>
+                        <td>Murray Valley Highway</td>
+                        <td>Reseal Area Major Patch on Shoulder Ch 38.070 90 x 2 = 180m2 High Priority</td>
+                        <td>3M</td>
+                        <td data-order="20121014">14/10/2012</td>
+                        <td>3.6</td>
+                        <td>90.00</td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>17.249</td>
+                        <td>RM100</td>
+                        <td>Sealed Pavement</td>
+                        <td>P131</td>
+                        <td>DIGOUTS/PATCHES Failed areas > 100sqm</td>
+                        <td>PF</td>
+                        <td>Murray Valley Highway</td>
+                        <td>Reseal Area Major Patch on Shoulder Ch 38.070 90 x 2 = 180m2 High Priority</td>
+                        <td>3M</td>
+                        <td data-order="20121014">14/10/2012</td>
+                        <td>150</td>
+                        <td>1000.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+            </div>
+          </div>
+          <!-- end form panel 1 -->
+
+        </div>
+      </div>
+    </div>
+    <!-- end tab row-->
+
+  </div> <!-- end form container -->
+</div>
+
+<script src="../Scripts/Custom/forms.js"></script>
+<script src="../Scripts/Custom/tables.js"></script>

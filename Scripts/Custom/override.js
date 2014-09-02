@@ -21,6 +21,7 @@ function insert_login() {
 function insert_report() {
   var filename = $(this).text();
   filename = filename.replace(/(\w+).*/,"$1");
+  console.log(filename);
   $('#insert-form').empty();
   $.get('../forms/form_' + filename + '.html', function(data) {
     $('#insert-form').html(data);
