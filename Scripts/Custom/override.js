@@ -28,6 +28,16 @@ function insert_report() {
   });
 }
 
+function insert_customised() {
+  var filename = $(this).text();
+  filename = filename.replace(/(\w+).*/,"$1");
+  console.log(filename);
+  $('#insert-form').empty();
+  $.get('../forms/form_' + filename + '.html', function(data) {
+    $('#insert-form').html(data);
+  });
+}
+
 function insert_profile() {
   var filename = $(this).text();
   filename = filename.replace(/(\w+).*/,"$1");

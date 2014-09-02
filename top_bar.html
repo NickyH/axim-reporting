@@ -6,26 +6,6 @@
 
       <div class="btn-group nger hidden">
 
-       <!--  <div type="button" class="btn btn-default">
-          <div class="dropdown">
-            <div class="dropdown-toggle" data-toggle="dropdown">
-              <a class="nav-link" href="#">
-                <img class="menu-icon" src="../Images/Custom/icons/icon-profile.png"> Username <b class="caret"></b></div>
-              <ul class="dropdown-menu user">
-                <li><a href="#">Profile</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Change Password</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Logout</a></li>
-              </ul>
-            </a>
-          </div>
-        </div> -->
-
-        <div type="button" class="btn btn-default">
-          <a id="goto-downloads" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-downloads.png"> Downloads </a>
-        </div>
-
         <div type="button" class="btn btn-default">
           <a id="goto-dashboard" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-dashboard.png"> Dashboard </a>
         </div>
@@ -47,10 +27,38 @@
                 <li><a href="#">M900 Others</a></li>
                 <li class="divider"></li>
                 <li><a href="#">M910 Monthly</a></li>
-                <li class="divider"></li>
+              </ul>
+            </a>
+          </div>
+        </div>
+
+        <div type="button" class="btn btn-default">
+          <div class="dropdown">
+            <div class="dropdown-toggle" data-toggle="dropdown">
+              <a class="nav-link" href="#">
+                <img class="menu-icon" src="../Images/Custom/icons/icon-customised.png"> Customised <b class="caret"></b></div>
+              <ul class="dropdown-menu customised">
                 <li><a href="#">Task Approval</a></li>
                 <li class="divider"></li>
                 <li><a href="#">Request Approval</a></li>
+              </ul>
+            </a>
+          </div>
+        </div>
+
+        <div type="button" class="btn btn-default">
+          <a id="goto-downloads" class="nav-link" href="#"><img class="menu-icon" src="../Images/Custom/icons/icon-downloads.png"> Downloads</a>
+        </div>
+
+        <div type="button" class="btn btn-default">
+          <div class="dropdown">
+            <div class="dropdown-toggle" data-toggle="dropdown">
+              <a class="nav-link" href="#">
+                <img class="menu-icon" src="../Images/Custom/icons/icon-profile.png"> Reports <b class="caret"></b></div>
+              <ul class="dropdown-menu user">
+                <li><a href="#">Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Logout</a></li>
               </ul>
             </a>
           </div>
@@ -68,5 +76,6 @@ $('#goto-downloads').on('click', insert_downloads);
 $('#goto-dashboard').on('click', insert_dashboard);
 
 $('ul.reports li a').on('click', insert_report);
+$('ul.customised li a').on('click', insert_customised);
 $('ul.user li a').on('click', insert_profile);
 </script>
