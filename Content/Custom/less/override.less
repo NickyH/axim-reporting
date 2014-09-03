@@ -562,9 +562,9 @@ li.active {
   background-color: @form-background-colour-light;
 }
 
-// .container {
-//   max-width: 1500px !important;
-// }
+.container {
+  max-width: 1700px !important;
+}
 
 .container-fluid {
   &.form-container {
@@ -615,15 +615,17 @@ li.active {
   &.approval-panel {
     min-height: 50px;
     min-width: 1200px !important;
+    max-width: 2400px !important;
     padding: 20px;
     margin: 10px auto 10px 10px;
     padding-bottom: 50px;
-    @media @widthMediumLarge {
-      min-width: 1200px !important;
-    }
-    @media @widthLarge {
-      min-width: 1200px !important;
-    }
+    width: 99% !important;
+    // @media @widthMediumLarge {
+    //   min-width: 1400px !important;
+    // }
+    // @media @widthLarge {
+    //   min-width: 1600px !important;
+    // }
   }
 }
 
@@ -1510,13 +1512,27 @@ a.oval-last:after {
 // table column widths
 th {
   &.col-checkbox {
-  width: 3%;
+    width: 8px;
+    max-width: 8px;
   }
-  &.col-codedesc {
-  width: 10%;
+  &.col-category {
+    max-width: 150px;
+    min-width: 50px;
+  }
+  &.col-code {
+    max-width: 150px;
+    min-width: 50px;
   }
   &.col-note {
-  width: 25%;
+    max-width: 250px;
+    min-width: 150px;
+  }
+  &.col-other {
+    max-width: 150px;
+    min-width: 80px;
+  }
+  &.col-reviewed {
+    max-width: 50px;
   }
 }
 
@@ -1535,6 +1551,13 @@ table.row-children {
   }
 }
 
+table.dataTable tbody {
+  td {
+    padding: 4px 5px !important;
+    border-right: 1px solid #e3e4e5 !important;
+  }
+}
+
 #request-approval-table_filter,
 #task-approval-table_filter
  {
@@ -1546,6 +1569,10 @@ table.row-children {
 #request-approval-table_wrapper,
 #task-approval-table_wrapper {
   margin-top: 50px;
+  overflow-x: scroll;
+  overflow-y: visible;
+  width: 100% !important;
+  padding-top: 10px;
 }
 
 #request-approval-table_length,
