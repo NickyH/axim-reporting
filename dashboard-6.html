@@ -22,14 +22,15 @@
                 <div class="col-12 dashboard">
                   <div class="row">
 
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5">
-                      <div id="hazardsFound" class="chart medium"></div>
+                    <div class="col-md-4">
+                      <div id="hazardsFound" class="chart small"></div>
                     </div>
-                    <div class="col-md-5">
-                      <div id="tasksComplete" class="chart medium"></div>
+                    <div class="col-md-4">
+                      <div id="tasksComplete" class="chart small"></div>
                     </div>
-                    <div class="col-md-1"></div>
+                    <div class="col-md-4">
+                      <div id="tasksComplete2" class="chart small"></div>
+                    </div>
 
                   </div>
                 </div>
@@ -37,14 +38,15 @@
                 <div class="col-12 dashboard">
                   <div class="row">
 
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5">
-                      <div id="hazardsFound2" class="chart medium"></div>
+                    <div class="col-md-4">
+                      <div id="hazardsFound2" class="chart small"></div>
                     </div>
-                    <div class="col-md-5">
-                      <div id="tasksComplete2" class="chart medium"></div>
+                    <div class="col-md-4">
+                      <div id="tasksComplete3" class="chart small"></div>
                     </div>
-                    <div class="col-md-1"></div>
+                    <div class="col-md-4">
+                      <div id="hazardsFound3" class="chart small"></div>
+                    </div>
 
                   </div>
                 </div>
@@ -145,5 +147,69 @@ chart_tasks_render();
   });
   chartTasksComplete2.render();
 
+// hazards found chart
+  var chartHazards3 = new CanvasJS.Chart("hazardsFound3", {
+      data: [
+        {
+          showInLegend: false,
+          indexLabelFontSize: '14',
+          indexLabelFontColor: 'white',
+          startAngle: 150,
+          indexLabelPlacement: "inside",
+          toolTipContent: "{name}: {y}%",
+          type: "pie",
+          dataPoints: [
+            { y: 3,indexLabel: 'RM800', name: "Operation Servicing" },
+            { y: 1, indexLabel: 'RM600', name: "Road Furniture" },
+            { y: 27, indexLabel: 'RM500', name: "Vegetation" },
+            { y: 69, indexLabel: 'RM100', name: "Pavement" }
+          ]
+        }
+      ],
+      title:{
+            text: "Hazards Found",
+            fontSize: "18"
+          },
+      legend: {
+        fontFamily: "Arial",
+        fontSize: 14
+      },
+    backgroundColor: "white"
+  });
+  chartHazards3.render();
+
+// tasks completed chart
+  var chartTasksComplete3 = new CanvasJS.Chart("tasksComplete3", {
+      data: [
+        {
+          showInLegend: false,
+          indexLabelFontSize: '14',
+          indexLabelFontColor: 'white',
+          startAngle: 150,
+          indexLabelPlacement: "inside",
+          toolTipContent: "{name}: ${y}",
+          type: "pie",
+          dataPoints: [
+            { y: 33000,indexLabel: 'RM800', name: "Operation Servicing" },
+            { y: 2000, indexLabel: 'RM700', name: "Structures" },
+            { y: 59000, indexLabel: 'RM600', name: "Road Furniture" },
+            { y: 75000, indexLabel: 'RM500', name: "Vegetation" },
+            { y: 90000, indexLabel: 'RM400', name: "Drainage" },
+            { y: 10000, indexLabel: 'RM200', name: "Shoulder" },
+            { y: 557000, indexLabel: 'RM100', name: "Pavement" }
+          ]
+        }
+      ],
+      title:{
+            text: "Tasks Completed",
+            fontSize: "18"
+          },
+      legend: {
+        fontFamily: "Arial",
+        fontSize: 14
+      },
+    backgroundColor: "white"
+  });
+  chartTasksComplete3.render();
 
 </script>

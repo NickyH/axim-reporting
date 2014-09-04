@@ -65,7 +65,7 @@ function login() {
 
 function insert_dashboard() {
   $('#insert-form').empty();
-  $.get('dashboard.html', function(data) {
+  $.get('dashboard-6.html', function(data) {
       $('#insert-form').html(data);
     });
 }
@@ -116,117 +116,175 @@ function nav_button_leave() {
   $(this).removeClass('nav-hover');
 }
 
-/* Custom animation for a table row to slide up or down */
-(function ($) {
-    var sR = {
-        defaults: {
-            slideSpeed: 400,
-            easing: false,
-            callback: false
-        },
-        thisCallArgs: {
-            slideSpeed: 400,
-            easing: false,
-            callback: false
-        },
-        methods: {
-            up: function (arg1, arg2, arg3) {
-                if (typeof arg1 == 'object') {
-                    for (p in arg1) {
-                        sR.thisCallArgs.eval(p) = arg1[p];
-                    }
-                } else if (typeof arg1 != 'undefined' && (typeof arg1 == 'number' || arg1 == 'slow' || arg1 == 'fast')) {
-                    sR.thisCallArgs.slideSpeed = arg1;
-                } else {
-                    sR.thisCallArgs.slideSpeed = sR.defaults.slideSpeed;
-                }
-                if (typeof arg2 == 'string') {
-                    sR.thisCallArgs.easing = arg2;
-                } else if (typeof arg2 == 'function') {
-                    sR.thisCallArgs.callback = arg2;
-                } else if (typeof arg2 == 'undefined') {
-                    sR.thisCallArgs.easing = sR.defaults.easing;
-                }
-                if (typeof arg3 == 'function') {
-                    sR.thisCallArgs.callback = arg3;
-                } else if (typeof arg3 == 'undefined' && typeof arg2 != 'function') {
-                    sR.thisCallArgs.callback = sR.defaults.callback;
-                }
-                var $cells = $(this).find('td');
-                $cells.wrapInner('<div class="slideRowUp" />');
-                var currentPadding = $cells.css('padding');
-                $cellContentWrappers = $(this).find('.slideRowUp');
-                $cellContentWrappers.slideUp(sR.thisCallArgs.slideSpeed, sR.thisCallArgs.easing).parent().animate({
-                    paddingTop: '0px',
-                    paddingBottom: '0px'
-                }, {
-                    complete: function () {
-                        $(this).children('.slideRowUp').replaceWith($(this).children('.slideRowUp').contents());
-                        $(this).parent().css({ 'display': 'none' });
-                        $(this).css({ 'padding': currentPadding });
-                    }
-                });
-                var wait = setInterval(function () {
-                    if ($cellContentWrappers.is(':animated') === false) {
-                        clearInterval(wait);
-                        if (typeof sR.thisCallArgs.callback == 'function') {
-                            sR.thisCallArgs.callback.call(this);
-                        }
-                    }
-                }, 100);
-                return $(this);
-            },
-            down: function (arg1, arg2, arg3) {
-                if (typeof arg1 == 'object') {
-                    for (p in arg1) {
-                        sR.thisCallArgs.eval(p) = arg1[p];
-                    }
-                } else if (typeof arg1 != 'undefined' && (typeof arg1 == 'number' || arg1 == 'slow' || arg1 == 'fast')) {
-                    sR.thisCallArgs.slideSpeed = arg1;
-                } else {
-                    sR.thisCallArgs.slideSpeed = sR.defaults.slideSpeed;
-                }
-                if (typeof arg2 == 'string') {
-                    sR.thisCallArgs.easing = arg2;
-                } else if (typeof arg2 == 'function') {
-                    sR.thisCallArgs.callback = arg2;
-                } else if (typeof arg2 == 'undefined') {
-                    sR.thisCallArgs.easing = sR.defaults.easing;
-                }
-                if (typeof arg3 == 'function') {
-                    sR.thisCallArgs.callback = arg3;
-                } else if (typeof arg3 == 'undefined' && typeof arg2 != 'function') {
-                    sR.thisCallArgs.callback = sR.defaults.callback;
-                }
-                var $cells = $(this).find('td');
-                $cells.wrapInner('<div class="slideRowDown" style="display:none;" />');
-                $cellContentWrappers = $cells.find('.slideRowDown');
-                $(this).show();
-                $cellContentWrappers.slideDown(sR.thisCallArgs.slideSpeed, sR.thisCallArgs.easing, function () { $(this).replaceWith($(this).contents()); });
-                var wait = setInterval(function () {
-                    if ($cellContentWrappers.is(':animated') === false) {
-                        clearInterval(wait);
-                        if (typeof sR.thisCallArgs.callback == 'function') {
-                            sR.thisCallArgs.callback.call(this);
-                        }
-                    }
-                }, 100);
-                return $(this);
-            }
-        }
-    };
-    $.fn.slideRow = function (method, arg1, arg2, arg3) {
-        if (typeof method != 'undefined') {
-            if (sR.methods[method]) {
-                return sR.methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-            }
-        }
-    };
-})(jQuery);
-
 function insert_top() {
   $.get('top_bar.html', function(data) {
     $('#insert-top').html(data);
   });
   $('#insert-top').trigger('create');
 }
+
+function enlarge_chart() {
+  if ($(this).hasClass('popup')) {
+    return false;
+  }
+  var id = $(this).attr('id');
+  var chart_clone = $(this).clone(true);
+  $(chart_clone).attr('id', 'clone_' + id );
+  $(chart_clone).addClass('popup').removeClass('original');
+  $('.chart-popup').append(chart_clone).removeClass('hidden');
+  $('.chart-overlay').removeClass('hidden');
+  if (id === 'hazardsFound') {
+    render_chart_hazards_clone();
+  }
+  switch (id) {
+    case 'hazardsFound':
+      render_chart_hazards_clone();
+      break;
+    case 'tasksComplete':
+      render_chart_tasks_clone();
+      break;
+    }
+}
+
+function close_chart() {
+  $('.chart-popup').empty().addClass('hidden');
+  $('.chart-overlay').addClass('hidden');
+}
+
+function render_chart_hazards_clone() {
+  //chart hazards clone
+  var chartHazards_clone = new CanvasJS.Chart("clone_hazardsFound", {
+      data: [
+        {
+          showInLegend: true,
+          indexLabelFontSize: '14',
+          indexLabelFontColor: 'white',
+          startAngle: 150,
+          indexLabelPlacement: "inside",
+          toolTipContent: "{name}: {y}%",
+          type: "pie",
+          dataPoints: [
+            { y: 3,indexLabel: 'RM800', name: "Operation Servicing" },
+            { y: 1, indexLabel: 'RM600', name: "Road Furniture" },
+            { y: 27, indexLabel: 'RM500', name: "Vegetation" },
+            { y: 69, indexLabel: 'RM100', name: "Pavement" }
+          ]
+        }
+      ],
+      title:{
+            text: "Hazards Found",
+            fontSize: "18"
+          },
+      legend: {
+        fontFamily: "Arial",
+        fontSize: 14
+      },
+    backgroundColor: "white"
+  });
+  chartHazards_clone.render();
+}
+
+function chart_hazards_render() {
+  // hazards found chart
+  var chartHazards = new CanvasJS.Chart("hazardsFound", {
+      data: [
+        {
+          showInLegend: false,
+          indexLabelFontSize: '14',
+          indexLabelFontColor: 'white',
+          startAngle: 150,
+          indexLabelPlacement: "inside",
+          toolTipContent: "{name}: {y}%",
+          type: "pie",
+          dataPoints: [
+            { y: 3,indexLabel: 'RM800', name: "Operation Servicing" },
+            { y: 1, indexLabel: 'RM600', name: "Road Furniture" },
+            { y: 27, indexLabel: 'RM500', name: "Vegetation" },
+            { y: 69, indexLabel: 'RM100', name: "Pavement" }
+          ]
+        }
+      ],
+      title:{
+            text: "Hazards Found",
+            fontSize: "18"
+          },
+      legend: {
+        fontFamily: "Arial",
+        fontSize: 14
+      },
+    backgroundColor: "none"
+  });
+  chartHazards.render();
+}
+
+function chart_tasks_render() {
+  // tasks completed chart
+    var chartTasksComplete = new CanvasJS.Chart("tasksComplete", {
+        data: [
+          {
+            showInLegend: false,
+            indexLabelFontSize: '14',
+            indexLabelFontColor: 'white',
+            startAngle: 150,
+            indexLabelPlacement: "inside",
+            toolTipContent: "{name}: ${y}",
+            type: "pie",
+            dataPoints: [
+              { y: 33000,indexLabel: 'RM800', name: "Operation Servicing" },
+              { y: 2000, indexLabel: 'RM700', name: "Structures" },
+              { y: 59000, indexLabel: 'RM600', name: "Road Furniture" },
+              { y: 75000, indexLabel: 'RM500', name: "Vegetation" },
+              { y: 90000, indexLabel: 'RM400', name: "Drainage" },
+              { y: 10000, indexLabel: 'RM200', name: "Shoulder" },
+              { y: 557000, indexLabel: 'RM100', name: "Pavement" }
+            ]
+          }
+        ],
+        title:{
+              text: "Tasks Completed",
+              fontSize: "18"
+            },
+        legend: {
+          fontFamily: "Arial",
+          fontSize: 14
+        },
+      backgroundColor: "white"
+    });
+    chartTasksComplete.render();
+  }
+
+  function render_chart_tasks_clone() {
+  // tasks completed chart
+    var chartTasksComplete = new CanvasJS.Chart("clone_tasksComplete", {
+        data: [
+          {
+            showInLegend: true,
+            indexLabelFontSize: '14',
+            indexLabelFontColor: 'white',
+            startAngle: 150,
+            indexLabelPlacement: "inside",
+            toolTipContent: "{name}: ${y}",
+            type: "pie",
+            dataPoints: [
+              { y: 33000,indexLabel: 'RM800', name: "Operation Servicing" },
+              { y: 2000, indexLabel: 'RM700', name: "Structures" },
+              { y: 59000, indexLabel: 'RM600', name: "Road Furniture" },
+              { y: 75000, indexLabel: 'RM500', name: "Vegetation" },
+              { y: 90000, indexLabel: 'RM400', name: "Drainage" },
+              { y: 10000, indexLabel: 'RM200', name: "Shoulder" },
+              { y: 557000, indexLabel: 'RM100', name: "Pavement" }
+            ]
+          }
+        ],
+        title:{
+              text: "Tasks Completed",
+              fontSize: "18"
+            },
+        legend: {
+          fontFamily: "Arial",
+          fontSize: 14
+        },
+      backgroundColor: "white"
+    });
+    chartTasksComplete.render();
+  }
