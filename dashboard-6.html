@@ -21,7 +21,6 @@
 
                 <div class="col-12 dashboard">
                   <div class="row">
-
                     <div class="col-md-4">
                       <div id="hazardsFound" class="chart small"></div>
                     </div>
@@ -71,6 +70,8 @@
 <div class="chart-overlay hidden">
 </div>
 
+<div class="chart-triangle hidden"></div>
+
 <script src="../Scripts/Custom/forms.js"></script>
 
 <script type="text/javascript">
@@ -109,9 +110,13 @@ chart_tasks_render();
         fontFamily: "Arial",
         fontSize: 14
       },
-    backgroundColor: "white"
+    backgroundColor: "none"
   });
   chartHazards2.render();
+  //append triangle with relevant status
+    var status = "amber"
+    var id = "#hazardsFound2";
+    add_status_colour(status, id);
 
 // tasks completed chart
   var chartTasksComplete2 = new CanvasJS.Chart("tasksComplete2", {
@@ -143,9 +148,13 @@ chart_tasks_render();
         fontFamily: "Arial",
         fontSize: 14
       },
-    backgroundColor: "white"
+    backgroundColor: "none"
   });
   chartTasksComplete2.render();
+  //append triangle with relevant status
+    var status = "green"
+    var id = "#tasksComplete2";
+    add_status_colour(status, id);
 
 // hazards found chart
   var chartHazards3 = new CanvasJS.Chart("hazardsFound3", {
@@ -174,9 +183,13 @@ chart_tasks_render();
         fontFamily: "Arial",
         fontSize: 14
       },
-    backgroundColor: "white"
+    backgroundColor: "none"
   });
   chartHazards3.render();
+  //append triangle with relevant status
+    var status = "red"
+    var id = "#hazardsFound3";
+    add_status_colour(status, id);
 
 // tasks completed chart
   var chartTasksComplete3 = new CanvasJS.Chart("tasksComplete3", {
@@ -208,8 +221,13 @@ chart_tasks_render();
         fontFamily: "Arial",
         fontSize: 14
       },
-    backgroundColor: "white"
+    backgroundColor: "none"
   });
   chartTasksComplete3.render();
+
+  //append triangle with relevant status
+    var status = "green"
+    var id = "#tasksComplete3";
+    add_status_colour(status, id);
 
 </script>

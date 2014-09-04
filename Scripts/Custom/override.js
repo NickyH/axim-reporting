@@ -215,6 +215,10 @@ function chart_hazards_render() {
     backgroundColor: "none"
   });
   chartHazards.render();
+  //append triangle with relevant status
+    var status = "amber"
+    var id = "#hazardsFound";
+    add_status_colour(status, id);
 }
 
 function chart_tasks_render() {
@@ -248,14 +252,25 @@ function chart_tasks_render() {
           fontFamily: "Arial",
           fontSize: 14
         },
-      backgroundColor: "white"
+      backgroundColor: "none"
     });
+
     chartTasksComplete.render();
+    //append triangle with relevant status
+    var status = "blue"
+    var id = "#tasksComplete";
+    add_status_colour(status, id);
+  }
+
+  function add_status_colour(status, id) {
+    var triangle = $('.chart-triangle').clone(true);
+    $(triangle).removeClass('hidden').addClass(status);
+    $(id).prepend(triangle);
   }
 
   function render_chart_tasks_clone() {
   // tasks completed chart
-    var chartTasksComplete = new CanvasJS.Chart("clone_tasksComplete", {
+    var chartTasksComplete_clone = new CanvasJS.Chart("clone_tasksComplete", {
         data: [
           {
             showInLegend: true,
@@ -284,7 +299,7 @@ function chart_tasks_render() {
           fontFamily: "Arial",
           fontSize: 14
         },
-      backgroundColor: "white"
+      backgroundColor: "none"
     });
-    chartTasksComplete.render();
+    chartTasksComplete_clone.render();
   }
