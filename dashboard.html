@@ -11,40 +11,31 @@
           <!-- form panel 1 -->
           <div class="col-lg-12 col-md-12 col-sm-12">
 
-            <div class="form-panel full-width dash-panel">
+            <div class="dash-panel">
 
-              <div class="form-horizontal container">
+              <div class="form-horizontal dash-container">
 
-                <!-- <div class="form-header dashboard">
-                  <span>Dashboard</span>
-                </div> -->
-
-                <div class="col-12 dashboard">
+                <div class="col-12">
                   <div class="row">
-
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                       <div id="hazardsFound" class="chart medium"></div>
                     </div>
-                    <div class="col-md-5">
-                      <div id="tasksComplete" class="chart medium"></div>
+                    <div class="col-md-6">
+                      <div id="tasksComplete" class="chart medium right"></div>
                     </div>
-                    <div class="col-md-1"></div>
 
                   </div>
                 </div>
 
-                <div class="col-12 dashboard">
+                <div class="col-12">
                   <div class="row">
 
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                       <div id="hazardsFound2" class="chart medium"></div>
                     </div>
-                    <div class="col-md-5">
-                      <div id="tasksComplete2" class="chart medium"></div>
+                    <div class="col-md-6">
+                      <div id="tasksComplete2" class="chart medium right"></div>
                     </div>
-                    <div class="col-md-1"></div>
 
                   </div>
                 </div>
@@ -107,9 +98,13 @@ chart_tasks_render();
         fontFamily: "Arial",
         fontSize: 14
       },
-    backgroundColor: "white"
+    backgroundColor: "none"
   });
   chartHazards2.render();
+  //append triangle with relevant status
+    var status = "amber"
+    var id = "#hazardsFound2";
+    add_status_colour(status, id);
 
 // tasks completed chart
   var chartTasksComplete2 = new CanvasJS.Chart("tasksComplete2", {
@@ -141,9 +136,13 @@ chart_tasks_render();
         fontFamily: "Arial",
         fontSize: 14
       },
-    backgroundColor: "white"
+    backgroundColor: "none"
   });
   chartTasksComplete2.render();
+  //append triangle with relevant status
+    var status = "green"
+    var id = "#tasksComplete2";
+    add_status_colour(status, id);
 
 
 </script>
