@@ -151,7 +151,7 @@ li.active {
 }
 
 .menu-icon {
-  width: 40px;
+  width: 35px;
 }
 
 .icon-tiny {
@@ -171,6 +171,7 @@ li.active {
     border-color: @top-bar-colour !important;
     font-size: 16px;
     line-height: 60px;
+    padding-left: 7px;
   }
   .btn-default {
     a.nav-link, a.nav-link:active, a.nav-link:hover {
@@ -566,6 +567,16 @@ li.active {
   max-width: 1700px !important;
 }
 
+.dash-container {
+  max-width: 1100px;
+  min-width: 1100px;
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: auto;
+  padding-left: auto;
+}
+
 .container-fluid {
   &.form-container {
     display: inline-block;
@@ -619,7 +630,9 @@ li.active {
     -webkit-box-shadow: none;
     margin-top: 0;
     padding-top: 0;
-    width: auto !important;
+    min-width: 1100px !important;
+    max-width: 1100px !important;
+    width: 1100px !important;
   }
   &.approval-panel {
     min-height: 50px;
@@ -629,12 +642,6 @@ li.active {
     margin: 10px auto 10px 10px;
     padding-bottom: 50px;
     width: 99% !important;
-    // @media @widthMediumLarge {
-    //   min-width: 1400px !important;
-    // }
-    // @media @widthLarge {
-    //   min-width: 1600px !important;
-    // }
   }
 }
 
@@ -1851,13 +1858,12 @@ li.active {
   &.small {
     width: 300px;
     height: 300px;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  &.medium {
-    width: 320px;
-    height: 320px;
     margin-left: 30px;
+    padding-right: 20px;
+  }
+  &.right {
+    float: right;
+    margin-right: 30px;
   }
   &.large {
     height: 450px;
@@ -1866,8 +1872,8 @@ li.active {
     margin-bottom: 50px;
   }
   &.popup {
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
     margin: 0;
   }
 }
@@ -1898,7 +1904,7 @@ li.active {
 .chart-overlay {
   position: fixed;
   z-index: 14000;
-  opacity: 0.5;
+  opacity: 0.6;
   background-color: grey;
   width: 100%;
   height: 100%;
@@ -1916,7 +1922,7 @@ li.active {
   left: 0;
   right: 0;
   z-index: 14001;
-  opacity: 0.95;
+  opacity: 1;
   &.hidden {
     display: none;
   }
