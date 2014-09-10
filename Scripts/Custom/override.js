@@ -8,7 +8,6 @@ $(function(){
 
 function clear_saved_state() {
   console.log('clear');
-
 }
 
 function insert_login() {
@@ -65,7 +64,7 @@ function login() {
 
 function insert_dashboard() {
   $('#insert-form').empty();
-  $.get('dashboard-6.html', function(data) {
+  $.get('dashboard.html', function(data) {
       $('#insert-form').html(data);
     });
 }
@@ -73,18 +72,8 @@ function insert_dashboard() {
 function insert_downloads() {
   $('#insert-form').empty();
   $.get('downloads.html', function(data) {
-      $('#insert-form').html(data);
-    });
-}
-
-function toggle_time_group() {
-   var trs = $(this).parent('tr').nextUntil('tr:has(.time-header)');
-   if ($(trs).hasClass('hidden')) {
-    $(trs).removeClass('hidden').slideDown(500);
-   }
-   else {
-     $(trs).addClass('hidden').slideUp(500);
-   }
+    $('#insert-form').html(data);
+  });
 }
 
 function insert_manage_facilities() {
@@ -100,13 +89,6 @@ function insert_manage_users() {
     $('#insert-form').html(data);
   });
 }
-
-// function toggle_all_facilities() {
-//  $('#selectAll').click(function(e){
-//     var table= $($(this).target).closest('table');
-//     $('td input:checkbox',table).prop('checked',this.checked);
-// });
-// }
 
 function nav_button_hover() {
   $(this).addClass('nav-hover');
@@ -303,3 +285,7 @@ function chart_tasks_render() {
     });
     chartTasksComplete_clone.render();
   }
+
+function swipe_table() {
+  console.log('swipe');
+}
