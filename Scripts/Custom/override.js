@@ -64,7 +64,7 @@ function login() {
 
 function insert_dashboard() {
   $('#insert-form').empty();
-  $.get('dashboard.html', function(data) {
+  $.get('dashboard-6.html', function(data) {
       $('#insert-form').html(data);
     });
 }
@@ -115,15 +115,15 @@ function enlarge_chart() {
   $(chart_clone).addClass('popup').removeClass('original');
   $('.chart-popup').append(chart_clone).removeClass('hidden');
   $('.chart-overlay').removeClass('hidden');
-  if (id === 'hazardsFound') {
-    render_chart_hazards_clone();
-  }
   switch (id) {
     case 'hazardsFound':
       render_chart_hazards_clone();
       break;
     case 'tasksComplete':
       render_chart_tasks_clone();
+      break;
+    case 'inspectionsCompleted':
+      render_chart_inspections_clone();
       break;
     }
 }
@@ -164,6 +164,79 @@ function render_chart_hazards_clone() {
     backgroundColor: "white"
   });
   chartHazards_clone.render();
+}
+
+function render_chart_inspections_clone() {
+  //inspections not completed column chart
+var chartInspectionsCompleted_clone = new CanvasJS.Chart("clone_inspectionsCompleted", {
+      title:{
+        text: "Inspections Not Completed",
+        fontSize: "26"
+      },
+      backgroundColor: "none",
+      axisY:{
+        includeZero: true,
+        gridColor: '#EBECED',
+        valueFormatString: " ",
+        tickLength: 0
+      },
+      axisX: {
+        tickThickness: 0,
+        interval: "month",
+        valueFormatString: "MMM-YY",
+        gridColor: '#EBECED',
+        labelFontSize: 18,
+        labelAngle: -45
+      },
+      toolTip: {
+        shared: false
+      },
+      data: [
+      {
+        showInLegend: false,
+        type: "stackedColumn",
+        color: "#d8881e ",
+        name: "Before Expiry",
+        toolTipContent: "<strong>{name}</strong><br/> {label}%",
+        dataPoints: [
+        {x: new Date(2013,0), y: 6.49, label: 0.649 },
+        {x: new Date(2013,1), y: 3.79, label: 0.379 },
+        {x: new Date(2013,2), y: 7.41, label: 0.741 },
+        {x: new Date(2013,3), y: 4.94, label: 0.494 },
+        {x: new Date(2013,4), y: 1.99, label: 0.199 },
+        {x: new Date(2013,5), y: 1.63, label: 0.163 },
+        {x: new Date(2013,6), y: 0.33, label: 0.033 },
+        {x: new Date(2013,7), y: 3.11, label: 0.311},
+        {x: new Date(2013,8), y: 2.46, label: 0.246 },
+        {x: new Date(2013,9), y: 0.96, label: 0.096 },
+        {x: new Date(2013,10), y: 0.55, label: 0.055 },
+        {x: new Date(2013,11), y: 0.65, label: 0.065 }
+        ]
+      },
+      {
+        showInLegend: false,
+        type: "stackedColumn",
+        color: "#f7170d ",
+        name: "Not Completed",
+        toolTipContent: "<strong>{name}</strong><br/> {label}%",
+        dataPoints: [
+        {x: new Date(2013,0), y: 1.04, label: 0.104 },
+        {x: new Date(2013,1), y: 1.45, label: 0.145 },
+        {x: new Date(2013,2), y: 0.73, label: 0.730 },
+        {x: new Date(2013,3), y: 0.35, label: 0.350 },
+        {x: new Date(2013,4), y: 0.14, label: 0.140 },
+        {x: new Date(2013,5), y: 0.00, label: 0.000 },
+        {x: new Date(2013,6), y: 13.66, label: 1.366 },
+        {x: new Date(2013,7), y: 3.11, label: 0.311 },
+        {x: new Date(2013,8), y: 0.00, label: 0.000 },
+        {x: new Date(2013,9), y: 3.84, label: 0.384 },
+        {x: new Date(2013,10), y: 0.41, label: 0.041 },
+        {x: new Date(2013,11), y: 0.54, label: 0.054 }
+        ]
+      }
+      ]
+    });
+chartInspectionsCompleted_clone.render();
 }
 
 function chart_hazards_render() {
@@ -286,6 +359,6 @@ function chart_tasks_render() {
     chartTasksComplete_clone.render();
   }
 
-function swipe_table() {
-  console.log('swipe');
-}
+// function swipe_table() {
+//   console.log('swipe');
+// }
