@@ -171,7 +171,11 @@ function render_chart_inspections_clone() {
 var chartInspectionsCompleted_clone = new CanvasJS.Chart("clone_inspectionsCompleted", {
       title:{
         text: "Inspections Not Completed",
-        fontSize: "26"
+        fontSize: "18"
+      },
+      legend: {
+        fontFamily: "Arial",
+        fontSize: 14
       },
       backgroundColor: "none",
       axisY:{
@@ -195,7 +199,7 @@ var chartInspectionsCompleted_clone = new CanvasJS.Chart("clone_inspectionsCompl
       },
       data: [
       {
-        showInLegend: false,
+        showInLegend: true,
         type: "stackedColumn",
         color: "#d8881e ",
         name: "Before Expiry",
@@ -216,7 +220,7 @@ var chartInspectionsCompleted_clone = new CanvasJS.Chart("clone_inspectionsCompl
           ]
         },
       {
-        showInLegend: false,
+        showInLegend: true,
         type: "stackedColumn",
         color: "#f7170d ",
         name: "Not Completed",
