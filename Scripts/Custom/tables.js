@@ -2,6 +2,7 @@
 
 // request approval report table
 $('#request-approval-table').dataTable({
+  "scrollX": true,
   "columns": [
     { "class": "remove-sort details-control col-checkbox" },
     { "class": "text" },
@@ -32,6 +33,7 @@ $('#request-approval-table').dataTable({
 
 // task approval report table
 $('#task-approval-table').dataTable({
+  "scrollX": true,
   "columns": [
     { "class": "text" },
     { "class": "text" },

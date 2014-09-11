@@ -147,6 +147,15 @@ li.active {
   left: 30px;
   // background-color: #f3cf00;
   border-radius: 5px;
+  @media @widthNarrow {
+    display: none;
+  }
+  @media @widthMedium {
+    display: none;
+  }
+  @media @widthMediumLarge {
+    width: 100px;
+  }
 }
 
 .menu-icon {
@@ -1383,8 +1392,6 @@ table.dataTable tbody {
 #request-approval-table_wrapper,
 #task-approval-table_wrapper {
   margin-top: 50px;
-  overflow-x: scroll;
-  overflow-y: visible;
   width: 100% !important;
   padding-top: 10px;
 }
@@ -1686,4 +1693,76 @@ li.active {
 
 a.canvasjs-chart-credit {
   display: none;
+}
+
+//bootstrap navbar overrides
+.nav-link {
+  @media @widthNarrow {
+    .nav-text {
+      display: none;
+    }
+    .menu-icon {
+      width: 40px;
+    }
+  }
+  @media @widthMedium {
+    .nav-text {
+      display: none;
+    }
+    .menu-icon {
+      width: 40px;
+    }
+  }
+  @media @widthMediumLarge {
+    .nav-text {
+      display: none;
+    }
+    .menu-icon {
+      width: 40px;
+    }
+  }
+}
+
+.print-dash {
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
+  .glyphicon {
+    top: 120px;
+    opacity: 0.3;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    padding: 9px;
+    background-color: grey;
+  }
+  .glyphicon:hover {
+    opacity: 0.8;
+  }
+}
+
+@media print {
+  .container-fluid.form-container {
+    padding-top: 0 !important;
+  }
+  .form-horizontal {
+    margin: 0 !important;
+  }
+  .print-dash {
+    display: none;
+  }
+  .top-bar {
+    display: none;
+    }
+  .chart {
+    max-width: 5cm;
+  }
+  .col-print {
+    float: left !important;
+    width: 8cm;
+    height: 8cm;
+    margin-left: 1cm
+  }
 }

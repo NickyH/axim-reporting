@@ -368,3 +368,8 @@ function render_chart_tasks_clone() {
 // function swipe_table() {
 //   console.log('swipe');
 // }
+
+function print_dash() {
+  window.print();
+   console.log('print');
+}

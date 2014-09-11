@@ -1,5 +1,9 @@
 <div class="content_div">
 
+  <div class="print-dash">
+    <span class="glyphicon glyphicon-print"></span>
+  </div>
+
   <!-- forms content container -->
   <div class="container-fluid form-container">
 
@@ -17,13 +21,13 @@
 
                 <div class="col-12">
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-print">
                       <div id="hazardsFound" class="chart small"></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-print">
                       <div id="tasksComplete" class="chart small"></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-print">
                       <div id="inspectionsCompleted" class="chart small"></div>
                     </div>
                   </div>
@@ -32,13 +36,13 @@
                 <div class="col-12">
                   <div class="row">
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-print">
                       <div id="hazardsFound2" class="chart small"></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-print">
                       <div id="tasksComplete2" class="chart small right"></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-print">
                       <div id="hazardsFound3" class="chart small right"></div>
                     </div>
 
@@ -77,6 +81,8 @@ $('.chart-overlay').on('click', close_chart);
 
 chart_hazards_render();
 chart_tasks_render();
+
+$('.print-dash').on('click', print_dash);
 
 // hazards found chart
   var chartHazards2 = new CanvasJS.Chart("hazardsFound2", {
