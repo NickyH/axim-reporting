@@ -195,12 +195,14 @@ var chartInspectionsCompleted = new CanvasJS.Chart("inspectionsCompleted", {
       backgroundColor: "none",
       axisY:{
         includeZero: true,
+        lineThickness: 0,
         gridColor: '#EBECED',
         valueFormatString: " ",
         tickLength: 0
       },
       axisX: {
         tickThickness: 0,
+        lineThickness: 0,
         interval: "month",
         valueFormatString: "MMM-YY",
         gridColor: '#EBECED',
@@ -258,10 +260,8 @@ var chartInspectionsCompleted = new CanvasJS.Chart("inspectionsCompleted", {
 
 chartInspectionsCompleted.render();
 //append triangle with relevant status
-    var status = "red"
-    var id = "#inspectionsCompleted";
-    add_status_colour(status, id);
-
-</script>
+var status = "red"
+var id = "#inspectionsCompleted";
+add_status_colour(status, id);
 
 </script>

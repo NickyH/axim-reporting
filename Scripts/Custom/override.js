@@ -178,10 +178,12 @@ var chartInspectionsCompleted_clone = new CanvasJS.Chart("clone_inspectionsCompl
         includeZero: true,
         gridColor: '#EBECED',
         valueFormatString: " ",
+        lineThickness: 0,
         tickLength: 0
       },
       axisX: {
         tickThickness: 0,
+        lineThickness: 0,
         interval: "month",
         valueFormatString: "MMM-YY",
         gridColor: '#EBECED',
@@ -199,20 +201,20 @@ var chartInspectionsCompleted_clone = new CanvasJS.Chart("clone_inspectionsCompl
         name: "Before Expiry",
         toolTipContent: "<strong>{name}</strong><br/> {label}%",
         dataPoints: [
-        {x: new Date(2013,0), y: 6.49, label: 0.649 },
-        {x: new Date(2013,1), y: 3.79, label: 0.379 },
-        {x: new Date(2013,2), y: 7.41, label: 0.741 },
-        {x: new Date(2013,3), y: 4.94, label: 0.494 },
-        {x: new Date(2013,4), y: 1.99, label: 0.199 },
-        {x: new Date(2013,5), y: 1.63, label: 0.163 },
-        {x: new Date(2013,6), y: 0.33, label: 0.033 },
-        {x: new Date(2013,7), y: 3.11, label: 0.311},
-        {x: new Date(2013,8), y: 2.46, label: 0.246 },
-        {x: new Date(2013,9), y: 0.96, label: 0.096 },
-        {x: new Date(2013,10), y: 0.55, label: 0.055 },
-        {x: new Date(2013,11), y: 0.65, label: 0.065 }
-        ]
-      },
+          {x: new Date(2013,0), y: 6.49, label: 0.649 },
+          {x: new Date(2013,1), y: 3.79, label: 0.379 },
+          {x: new Date(2013,2), y: 7.41, label: 0.741 },
+          {x: new Date(2013,3), y: 4.94, label: 0.494 },
+          {x: new Date(2013,4), y: 1.99, label: 0.199 },
+          {x: new Date(2013,5), y: 1.63, label: 0.163 },
+          {x: new Date(2013,6), y: 0.33, label: 0.033 },
+          {x: new Date(2013,7), y: 3.11, label: 0.311},
+          {x: new Date(2013,8), y: 2.46, label: 0.246 },
+          {x: new Date(2013,9), y: 0.96, label: 0.096 },
+          {x: new Date(2013,10), y: 0.55, label: 0.055 },
+          {x: new Date(2013,11), y: 0.65, label: 0.065 }
+          ]
+        },
       {
         showInLegend: false,
         type: "stackedColumn",
@@ -278,86 +280,86 @@ function chart_hazards_render() {
 
 function chart_tasks_render() {
   // tasks completed chart
-    var chartTasksComplete = new CanvasJS.Chart("tasksComplete", {
-        data: [
-          {
-            showInLegend: false,
-            indexLabelFontSize: '14',
-            indexLabelFontColor: 'white',
-            startAngle: 150,
-            indexLabelPlacement: "inside",
-            toolTipContent: "{name}: ${y}",
-            type: "pie",
-            dataPoints: [
-              { y: 33000,indexLabel: 'RM800', name: "Operation Servicing" },
-              { y: 2000, indexLabel: 'RM700', name: "Structures" },
-              { y: 59000, indexLabel: 'RM600', name: "Road Furniture" },
-              { y: 75000, indexLabel: 'RM500', name: "Vegetation" },
-              { y: 90000, indexLabel: 'RM400', name: "Drainage" },
-              { y: 10000, indexLabel: 'RM200', name: "Shoulder" },
-              { y: 557000, indexLabel: 'RM100', name: "Pavement" }
-            ]
-          }
-        ],
-        title:{
-              text: "Tasks Completed",
-              fontSize: "18"
-            },
-        legend: {
-          fontFamily: "Arial",
-          fontSize: 14
-        },
-      backgroundColor: "none"
-    });
+  var chartTasksComplete = new CanvasJS.Chart("tasksComplete", {
+      data: [
+        {
+          showInLegend: false,
+          indexLabelFontSize: '14',
+          indexLabelFontColor: 'white',
+          startAngle: 150,
+          indexLabelPlacement: "inside",
+          toolTipContent: "{name}: ${y}",
+          type: "pie",
+          dataPoints: [
+            { y: 33000,indexLabel: 'RM800', name: "Operation Servicing" },
+            { y: 2000, indexLabel: 'RM700', name: "Structures" },
+            { y: 59000, indexLabel: 'RM600', name: "Road Furniture" },
+            { y: 75000, indexLabel: 'RM500', name: "Vegetation" },
+            { y: 90000, indexLabel: 'RM400', name: "Drainage" },
+            { y: 10000, indexLabel: 'RM200', name: "Shoulder" },
+            { y: 557000, indexLabel: 'RM100', name: "Pavement" }
+          ]
+        }
+      ],
+      title:{
+            text: "Tasks Completed",
+            fontSize: "18"
+          },
+      legend: {
+        fontFamily: "Arial",
+        fontSize: 14
+      },
+    backgroundColor: "none"
+  });
 
-    chartTasksComplete.render();
-    //append triangle with relevant status
-    var status = "blue"
-    var id = "#tasksComplete";
-    add_status_colour(status, id);
-  }
+  chartTasksComplete.render();
+  //append triangle with relevant status
+  var status = "blue"
+  var id = "#tasksComplete";
+  add_status_colour(status, id);
+}
 
-  function add_status_colour(status, id) {
-    var triangle = $('.chart-triangle').clone(true);
-    $(triangle).removeClass('hidden').addClass(status);
-    $(id).prepend(triangle);
-  }
+function add_status_colour(status, id) {
+  var triangle = $('.chart-triangle').clone(true);
+  $(triangle).removeClass('hidden').addClass(status);
+  $(id).prepend(triangle);
+}
 
-  function render_chart_tasks_clone() {
-  // tasks completed chart
-    var chartTasksComplete_clone = new CanvasJS.Chart("clone_tasksComplete", {
-        data: [
-          {
-            showInLegend: true,
-            indexLabelFontSize: '14',
-            indexLabelFontColor: 'white',
-            startAngle: 150,
-            indexLabelPlacement: "inside",
-            toolTipContent: "{name}: ${y}",
-            type: "pie",
-            dataPoints: [
-              { y: 33000,indexLabel: 'RM800', name: "Operation Servicing" },
-              { y: 2000, indexLabel: 'RM700', name: "Structures" },
-              { y: 59000, indexLabel: 'RM600', name: "Road Furniture" },
-              { y: 75000, indexLabel: 'RM500', name: "Vegetation" },
-              { y: 90000, indexLabel: 'RM400', name: "Drainage" },
-              { y: 10000, indexLabel: 'RM200', name: "Shoulder" },
-              { y: 557000, indexLabel: 'RM100', name: "Pavement" }
-            ]
-          }
-        ],
-        title:{
-              text: "Tasks Completed",
-              fontSize: "18"
-            },
-        legend: {
-          fontFamily: "Arial",
-          fontSize: 14
-        },
-      backgroundColor: "none"
-    });
-    chartTasksComplete_clone.render();
-  }
+function render_chart_tasks_clone() {
+// tasks completed chart
+  var chartTasksComplete_clone = new CanvasJS.Chart("clone_tasksComplete", {
+    data: [
+      {
+        showInLegend: true,
+        indexLabelFontSize: '14',
+        indexLabelFontColor: 'white',
+        startAngle: 150,
+        indexLabelPlacement: "inside",
+        toolTipContent: "{name}: ${y}",
+        type: "pie",
+        dataPoints: [
+          { y: 33000,indexLabel: 'RM800', name: "Operation Servicing" },
+          { y: 2000, indexLabel: 'RM700', name: "Structures" },
+          { y: 59000, indexLabel: 'RM600', name: "Road Furniture" },
+          { y: 75000, indexLabel: 'RM500', name: "Vegetation" },
+          { y: 90000, indexLabel: 'RM400', name: "Drainage" },
+          { y: 10000, indexLabel: 'RM200', name: "Shoulder" },
+          { y: 557000, indexLabel: 'RM100', name: "Pavement" }
+        ]
+      }
+    ],
+    title:{
+        text: "Tasks Completed",
+        fontSize: "18"
+      },
+    legend: {
+      fontFamily: "Arial",
+      fontSize: 14
+    },
+    backgroundColor: "none"
+  });
+  chartTasksComplete_clone.render();
+}
 
 // function swipe_table() {
 //   console.log('swipe');
