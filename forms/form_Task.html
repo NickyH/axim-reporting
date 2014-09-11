@@ -1,5 +1,9 @@
 <div class="content_div">
 
+  <div class="print-table">
+    <span class="glyphicon glyphicon-print"></span>
+  </div>
+
   <!-- forms content container -->
   <div class="container-fluid form-container">
 
@@ -113,7 +117,7 @@
 
                 <div class="form-horizontal container"> <!-- form-->
 
-                  <table id="task-approval-table" class="table table-condensed   reference-history table-striped row-children">
+                  <table id="task-approval-table" class="table table-condensed reference-history table-striped row-children">
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -207,5 +211,6 @@
 <script src="../Scripts/Custom/forms.js"></script>
 <script src="../Scripts/Custom/tables.js"></script>
 <script>
-$('#task-approval-table').on('swipeone',swipe_table());
+// $('#task-approval-table').on('swipeone',swipe_table());
+$('.print-table').on('click', print_table);
 </script>

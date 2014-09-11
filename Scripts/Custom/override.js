@@ -371,5 +371,8 @@ function render_chart_tasks_clone() {
 
 function print_dash() {
   window.print();
-   console.log('print');
+}
+
+function print_table() {
+  window.print();
 }

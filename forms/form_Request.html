@@ -1,5 +1,9 @@
 <div class="content_div">
 
+  <div class="print-table">
+    <span class="glyphicon glyphicon-print"></span>
+  </div>
+
   <!-- forms content container -->
   <div class="container-fluid form-container">
 
@@ -278,5 +282,6 @@
 <script src="../Scripts/Custom/forms.js"></script>
 <script src="../Scripts/Custom/tables.js"></script>
 <script>
-$('#task-approval-table').bind('swipeone',swipe_table());
+// $('#task-approval-table').bind('swipeone',swipe_table());
+$('.print-table').on('click', print_table);
 </script>
