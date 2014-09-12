@@ -1,7 +1,7 @@
 <div class="content_div">
 
-  <div class="print-table">
-    <span class="glyphicon glyphicon-print"></span>
+  <div class="export-table">
+    <span class="glyphicon glyphicon-export" title="Export to CSV"></span>
   </div>
 
   <!-- forms content container -->
@@ -211,6 +211,5 @@
 <script src="../Scripts/Custom/forms.js"></script>
 <script src="../Scripts/Custom/tables.js"></script>
 <script>
-// $('#task-approval-table').on('swipeone',swipe_table());
-$('.print-table').on('click', print_table);
+$('.export-table').on('click', export_table);
 </script>
