@@ -1,7 +1,31 @@
 <div class="content_div">
 
-  <div class="print-dash">
-    <span class="glyphicon glyphicon-print" title="Print"></span>
+  <div class="dash-utility">
+
+    <div class="btn-group refresh">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+        Refresh Dashboard <span class="glyphicon glyphicon-refresh"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Refresh every 5 minutes</a></li>
+        <li><a href="#">Refresh every ten minutes</a></li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-4 control-label"></label>
+      <div class="col-sm-8">
+        <select class="selectpicker show-tick form-control">
+          <option>Default Dashboard</option>
+          <option>Dashboard Other</option>
+          <option>Dashboard Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="print-dash">
+      <span class="glyphicon glyphicon-print" title="Print"></span>
+    </div>
   </div>
 
   <!-- forms content container -->
